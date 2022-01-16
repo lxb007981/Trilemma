@@ -1,0 +1,10 @@
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $transition-duration: (
+    "default": 0.5s,
+  ),
+  $switch: (
+    "height": 30px,
+    "button-size": 27px,
+    "core-border-radius": 20px,
+  )
+);
