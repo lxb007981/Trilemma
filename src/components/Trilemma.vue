@@ -1,29 +1,32 @@
 <template>
-  <div class="container">
-    <div class="flexbox">
-      <div class="switch-label">
-        <el-switch v-model="value1" class="mb-2" name="switch1" :width="switchWidth" />
-        <label for="switch1">{{ label1 }}</label>
-      </div>
-      <div class="switch-label">
-        <el-switch
-          v-model="value2"
-          class="mb-2"
-          active-color="#13ce66"
-          name="switch2"
-          :width="switchWidth"
-        />
-        <label for="switch2">{{ label2 }}</label>
-      </div>
-      <div class="switch-label">
-        <el-switch
-          v-model="value3"
-          class="mb-2"
-          active-color="#f56c6c"
-          name="switch3"
-          :width="switchWidth"
-        />
-        <label for="switch3">{{ label3 }}</label>
+  <div>
+    <h2 class="trilemmaTitle">{{ title }}</h2>
+    <div class="container">
+      <div class="flexbox">
+        <div class="switch-label">
+          <el-switch v-model="value1" class="mb-2" name="switch1" :width="switchWidth" />
+          <label for="switch1">{{ item1 }}</label>
+        </div>
+        <div class="switch-label">
+          <el-switch
+            v-model="value2"
+            class="mb-2"
+            active-color="#13ce66"
+            name="switch2"
+            :width="switchWidth"
+          />
+          <label for="switch2">{{ item2 }}</label>
+        </div>
+        <div class="switch-label">
+          <el-switch
+            v-model="value3"
+            class="mb-2"
+            active-color="#f56c6c"
+            name="switch3"
+            :width="switchWidth"
+          />
+          <label for="switch3">{{ item3 }}</label>
+        </div>
       </div>
     </div>
   </div>
@@ -35,11 +38,11 @@ const switchWidth = ref(60)
 const value1 = ref(false)
 const value2 = ref(false)
 const value3 = ref(false)
-
 interface Props {
-  label1: string
-  label2: string
-  label3: string
+  item1: string
+  item2: string
+  item3: string
+  title: string
 }
 
 defineProps<Props>()
@@ -102,6 +105,11 @@ watch([value1, value2, value3], ([val1, val2, val3], [prevVal1, prevVal2, prevVa
 
 label {
   font-weight: bold;
+}
+
+.trilemmaTitle {
+  margin-bottom: 60px;
+  text-align: center;
 }
 
 :deep(.el-switch__core .el-switch__action) {
